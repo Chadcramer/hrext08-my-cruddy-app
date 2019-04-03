@@ -9,6 +9,7 @@
 		crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="studyPage.html">
 </head>
 <body>
 	<div class="container">
@@ -28,11 +29,14 @@
 			</div>
 			<!-- clear button? -->
 		</form>	
+
+		<div id="statusLabel">Status:</div>
+
 		<table>
 			<thead>
 				<tr>
-					<th>Key</th>
-					<th>Value</th>
+					<th>Question</th>
+					<th>Answer</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -42,8 +46,8 @@
 				</tr>
 			</tbody>
 		</table>
+		<button class="button linkPages" id="btn-big" type="button">Study!</button>
 	</div>
-	<div id="statusLabel">Status:</div>
 
 	<script src="app/app.js"></script>
   <!--

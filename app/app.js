@@ -41,14 +41,14 @@ $(document).ready(function () {
 		var keyExists = existingValue !== null;
 
 		if (value === existingValue) {
-			updateStatusLabel('key not updated - that value already exists silly! xD')
+			updateStatusLabel('key not updated - that value already exists!')
 		} else if (keyExists) {
 			updateEntry(key, value);
 			updateStatusLabel('key updated - ' + key);
 		} else if (key === '') {
 			updateStatusLabel('invalid input!')
 		} else {
-			updateStatusLabel('key doesn\'t exist, please use create button instead! :D');
+			updateStatusLabel('key doesn\'t exist, please use create button instead!');
 		}		
 		
 		loadLocalStorage();		
@@ -70,6 +70,17 @@ $(document).ready(function () {
 
 		loadLocalStorage();
 	});	
+
+
+	// Link multiple pages together
+	$('#btn-big').on('click', function(e){
+		window.location.replace("studyPage.html");
+
+	});
+
+	$('#btn-backHome').on('click', function(e){
+		window.location.replace("index.html");
+	});
 
 });
 /*

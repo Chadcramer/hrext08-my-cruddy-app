@@ -2,7 +2,7 @@
 - [ ] UI/UX considerations (how are we going to use this)
 
 nice contrasting color pallet
-a form that doenst look like its from a circa 2001 webpage
+a form that doesnt look like its from a circa 2001 webpage
 
 
 advanced content
@@ -14,7 +14,7 @@ state changing styling
 	guide: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 */
 .container {
-	display: flex;
+	display: inline-block;
 }
 
 /*
