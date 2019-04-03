@@ -31,6 +31,7 @@ $(document).ready(function () {
 			updateStatusLabel('key created - ' + key);
 		}
 
+
 		loadLocalStorage();
 	});
 
