@@ -58,16 +58,19 @@ $(document).ready(function () {
 	$('#btn-delete').on('click', function(e) {
 		var key = $('#key').val();
 		var value = $('#value').val();
-		var keyExists = localStorage.getItem(key) !== null;
+		var existingValue = localStorage.getItem(key)
+		var keyExists = existingValue !== null;
 
-		if (keyExists) {
-			removeEntry(key);
-			updateStatusLabel('key removed - ' + key);
+		if (value === existingValue) {
+			updateStatusLabel('key not updated - that value already exists!')
+		} else if (keyExists) {
+			updateEntry(key, value);
+			updateStatusLabel('key updated - ' + key);
 		} else if (key === '') {
 			updateStatusLabel('invalid input!')
 		} else {
-			updateStatusLabel('key doesn\'t exist, nothing removed. :|');
-		}
+			updateStatusLabel('key doesn\'t exist, please use create button instead!');
+		}	
 
 		loadLocalStorage();
 	});	
@@ -82,6 +85,12 @@ $(document).ready(function () {
 	$('#btn-backHome').on('click', function(e){
 		window.location.replace("index.html");
 	});
+
+
+	// Flash Card Deck
+	$('.cards').on('click', function(e){
+		$(this).next().toggleClass("hidden");
+	})
 
 });
 /*
@@ -119,3 +128,6 @@ var updateEntry = function(key, value) {
 var removeEntry = function(key) {
 	return localStorage.removeItem(key);
 }
+
+// replace card
+
