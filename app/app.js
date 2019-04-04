@@ -88,9 +88,11 @@ $(document).ready(function () {
 
 
 	// Flash Card Deck
-	$('.cards').on('click', function(e){
-		$(this).next().toggleClass("hidden");
-	})
+	//$('.cards').on('click', function(e){}
+
+	$( ".cardFront" ).click(function(e) {     
+    	$('.cardBack').toggle("slide", { direction: "right" }, 1);
+	});
 
 });
 /*

@@ -86,6 +86,16 @@ button.button {
 	font-size: 20px;
 }
 
+.form .button {
+	color: white;
+	background-color: #39CCCC;
+	transition: 0.2s;
+}
+
+.form .button:hover {
+	font-size: 105%;
+}
+
 .inputField {
 	width: 100%;
 	padding: 12px 20px;
