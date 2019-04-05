@@ -11,9 +11,10 @@ var updateStatusLabel = function(message) {
 	$('#statusLabel').text('Status: ' + message);
 }
 
- //jQuery document ready initialization stuff
- ////button and form event handlers
+ // jQuery document ready initialization stuff
+ // button and form event handlers
  // logic for determining action probably needs to go in the event handler
+ 
 $(document).ready(function () {
 	loadLocalStorage();
 
@@ -93,6 +94,34 @@ $(document).ready(function () {
 	$( ".cardFront" ).click(function(e) {     
     	$('.cardBack').toggle("slide", { direction: "right" }, 1);
 	});
+
+	// 
+	$('.cardFront').on('click', function(e) {
+		var key = $('#key').val();
+		var value = $('#value').val();
+		var existingValue = localStorage.getItem(key)
+		var keyExists = existingValue !== null;
+
+		if (value === existingValue) {
+			updateStatusLabel('key not updated - that value already exists!')
+		} else if (keyExists) {
+			updateEntry(key, value);
+			updateStatusLabel('key updated - ' + key);
+		} else if (key === '') {
+			updateStatusLabel('invalid input!')
+		} else {
+			updateStatusLabel('key doesn\'t exist, please use create button instead!');
+		}		
+		
+		loadLocalStorage();		
+	});
+
+	var snd = new Audio("sound.mp3");
+	$(".cardFront").on('click', function(e){
+		snd.play();
+	})
+	
+
 
 });
 /*
